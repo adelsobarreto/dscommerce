@@ -2,6 +2,7 @@ plugins {
 	id 'java'
 	id 'org.springframework.boot' version '3.3.3'
 	id 'io.spring.dependency-management' version '1.1.6'
+	id 'maven-publish'
 }
 
 group = 'com.devsuperior'
@@ -20,6 +21,8 @@ repositories {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation group: 'jakarta.validation', name: 'jakarta.validation-api', version: '3.1.0'
+	implementation group: 'org.hibernate.validator', name: 'hibernate-validator', version: '8.0.1.Final'
 	runtimeOnly 'com.h2database:h2'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
@@ -28,3 +31,4 @@ dependencies {
 tasks.named('test') {
 	useJUnitPlatform()
 }
+
